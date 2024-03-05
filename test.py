@@ -18,11 +18,11 @@ if not os.path.exists("countries.csv"):
 dataframe = pd.read_csv("countries.csv")
 dataframe = dataframe.set_index("countries")
 
-assert dataframe.loc["United States of America"].values[0] == 579
-assert dataframe.loc["China"].values[0] == 273
-assert dataframe.loc["India"].values[0] == 174
-assert dataframe.loc["United Kingdom"].values[0] == 173
-assert dataframe.loc["Italy"].values[0] == 112
+assert dataframe["count"]["United States of America"] == 579
+assert dataframe["count"]["China"] == 273
+assert dataframe["count"]["India"] == 174
+assert dataframe["count"]["United Kingdom"] == 173
+assert dataframe["count"]["Italy"] == 112
 
 if not os.path.exists("map.html"):
     raise FileNotFoundError("File 'map.html' not found")
